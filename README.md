@@ -52,3 +52,4 @@ responsive, and can be easily integrated into existing web platforms.
   approach.
 - There were no requirements regarding compatibility with web browsers,
   therefore the code was manually tested only in modern browsers.
+- In terms of languages currently only english language support is provided
