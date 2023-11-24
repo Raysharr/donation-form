@@ -1,12 +1,11 @@
 import { formatAsLocalizedNumber, stripOutNonDigits } from '.';
 
 export const formatAsCurrency = (value: string) => {
-  const valueWithOnlyNumbers = stripOutNonDigits(value);
-
-  if (valueWithOnlyNumbers === '') return '';
+  if (value === '') return '';
 
   if (value.includes('.')) {
     const decimal_pos = value.indexOf('.');
+
     let left_side = stripOutNonDigits(value.substring(0, decimal_pos));
 
     if (decimal_pos === 0) {

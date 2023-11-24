@@ -1,5 +1,5 @@
 export const formatCurrencyAsNumber = (value: string) => {
-  const parsedValue = Number(value.replace(/[^\d.]/g, ''));
+  const parsedValue = value.replace(/[^\d.]/g, '');
 
   return parsedValue;
 };

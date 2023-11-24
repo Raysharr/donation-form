@@ -25,7 +25,10 @@ function DonationFormSummary() {
 
   // TODO: Refactor to use a custom hook
   useEffect(() => {
-    if (!donationAmount) return;
+    if (!donationAmount) {
+      setDonationAmountFormatted('0');
+      return;
+    }
 
     const donationAmountFormatted = formatAsCurrency(donationAmount.toString());
 

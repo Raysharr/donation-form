@@ -64,6 +64,7 @@ interface TypographyProps {
   family?: keyof FontFamily;
   className?: string;
   children: React.ReactNode;
+  htmlTag?: keyof JSX.IntrinsicElements;
 }
 
 function Typography({
@@ -73,10 +74,11 @@ function Typography({
   weight,
   className,
   children,
+  htmlTag,
 }: TypographyProps) {
   return (
     <TypographyStyled
-      as={variantMapping[variant]}
+      as={htmlTag || variantMapping[variant]}
       className={`${variant} ${className}`}
       $color={color}
       $weight={weight}

@@ -53,7 +53,10 @@ function DonationFormTotalAmount() {
 
   // TODO: Refactor to use a custom hook
   useEffect(() => {
-    if (!donationDurationInMonths || !donationAmount) return;
+    if (!donationDurationInMonths || !donationAmount) {
+      setDonationTotalAmountFomatted('0');
+      return;
+    }
 
     const totalAmount = donationDurationInMonths * donationAmount;
 
@@ -64,11 +67,11 @@ function DonationFormTotalAmount() {
 
   return (
     <DonationFormTotalAmountContainer>
-      <DonationFormTotalAmountTypography variant={'h3'}>
+      <DonationFormTotalAmountTypography variant={'h3'} htmlTag={'span'}>
         Total Amount
       </DonationFormTotalAmountTypography>
 
-      <DonationFormTotalAmountValueTypography variant={'h1'}>
+      <DonationFormTotalAmountValueTypography variant={'h1'} htmlTag={'span'}>
         ${donationTotalAmountFomatted || 0}
       </DonationFormTotalAmountValueTypography>
     </DonationFormTotalAmountContainer>

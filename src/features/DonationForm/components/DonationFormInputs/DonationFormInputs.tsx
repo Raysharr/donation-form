@@ -22,6 +22,11 @@ function DonationFormInputs() {
 
   const handleDonationAmountChange = useCallback(
     (amount: string) => {
+      if (amount === '') {
+        setDonationAmount(undefined);
+        return;
+      }
+
       setDonationAmount(parseFloat(amount));
     },
     [setDonationAmount],
